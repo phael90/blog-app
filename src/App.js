@@ -1,10 +1,10 @@
-import Navigation from "./Navigation";
+import Navbar from "./Navbar";
 import Home from "./Routes/Home";
 
 function App() {
   return (
     <div className="App">
-      <Navigation />
+      <Navbar />
       <div className="content">
         <Home />
       </div>
