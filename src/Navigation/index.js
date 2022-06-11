@@ -1,10 +1,9 @@
 const Navigation = () => {
   return (
     <nav className="nav">
-      <section>
         <h1>Rapha Blog</h1>
         <a href="/">Home</a>
-      </section>
+        <a href="/create">New Blog</a>
     </nav>
   );
 };
