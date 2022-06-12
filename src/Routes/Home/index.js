@@ -1,4 +1,5 @@
 import { useState} from 'react';
+import BlogList from '../../BlogList';
 
 let blogDatabase = [
   {title: "First glog", body: "first", author: "Luigi", id: 1},
@@ -9,14 +10,9 @@ const Home = () => {
   const [ blogs, setBlog] = useState(blogDatabase);
   
   return (
-  <header className="home">
-    {blogs.map((blog) => (
-      <div className="blog-preview" key={blog.id}>
-        <h2>{ blog.title }</h2>
-        <p>Written by { blog.author }</p>
-      </div>
-    ))}
-  </header>);
+  <section className="home">
+   <BlogList blogs={blogs}/>
+  </section>);
 };
 
 export default Home;
