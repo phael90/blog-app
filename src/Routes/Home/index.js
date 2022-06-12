@@ -1,18 +1,31 @@
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import BlogList from '../../BlogList';
 
-let blogDatabase = [
-  {title: "First glog", body: "first", author: "Luigi", id: 1},
-  {title: "Second blog", body: "second", author: "Mario", id: 2},
-  {title: "Third blog", body: "third", author: "Raphael", id: 3},
-];
 const Home = () => {
-  const [ blogs, setBlog] = useState(blogDatabase);
+  const [ blogs, setBlogs] = useState([
+    {title: "First blog", body: "first", author: "luigi", id: 1},
+    {title: "Second blog", body: "second", author: "mario", id: 2},
+    {title: "Third blog", body: "third", author: "mario", id: 3},
+  ]);
+
+  const [name, setName] = useState('mario');
+  
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter(blog => blog.id !== id )
+    setBlogs(newBlogs);
+  }
+
+  useEffect(() => {
+    console.log('useEffect ran');
+    console.log(name);
+  }, [name]);
   
   return (
   <section className="home">
-   <BlogList blogs={blogs}/>
-  </section>);
+   <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete} />
+   <button onClick={() => setName('luigi')}>change name</button>
+   <p>{ name }</p>
+  </section>)
 };
 
 export default Home;
