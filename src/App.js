@@ -9,6 +9,7 @@ function App() {
      <div className="App">
       <Navbar />
       <div className="content">
+        // switch component makes sure that only one route shows at ant one time(multipy whan not applied)
         <Switch>
           <Route path="/">
             <Home />
