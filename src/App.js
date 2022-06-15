@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from "./Navbar/navBar";
-import Home from "./Routes/Home/home";
+import Navbar from "./Navbar/NavBar";
+import Home from "./Routes/Home/Home";
 import Create from "./Create/create.js"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -12,7 +12,7 @@ function App() {
       <div className="content">
         // switch component makes sure that only one route shows at ant one time(multipy whan not applied)
         <Switch>
-          <Route path="/">
+          <Route exact path="/">
             <Home />
           </Route>
           <Route path="/create">
