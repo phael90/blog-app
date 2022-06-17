@@ -6,13 +6,14 @@ const useFetch = (url) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
+      const controller = new AbortController()
+      const { signal } = controller
+
         setTimeout(() => {
-          fetch(url)
+          fetch(url, { signal })
           .then(res => {
-            console.log(res);
             if(!res.ok){
-              console.log(res);
-              throw Error('erm... sorry we could not fetch the data for that resource ¯\_(ツ)_/¯')
+              throw Error("erm... sorry we could not fetch the data for that resource ¯\_(ツ)_/¯")
             }
             return res.json();
           })
@@ -22,11 +23,17 @@ const useFetch = (url) => {
             setError(null);
           })
           .catch((error) => {
-            setIsLoading(false);
-            setError(error.message);
+            if(error.name === "AbortError") {
+            }else {
+              setIsLoading(false);
+              setError(error.message);
+            }
           })
-        }, 1000)
-      }, []);
+        }, 1000);
+
+        return () => controller.abort();
+      },[]
+    );
       
     return { data, isLoading, error }
 }
