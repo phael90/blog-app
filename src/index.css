@@ -50,3 +50,42 @@
 .blog-preview a {
   text-decoration: none;
 }
+/*  blog details page */
+.blog-details h2 {
+  font-size: 20px;
+  color: #35a9f1;
+  margin-bottom: 10px;
+}
+.blog-details div {
+  margin: 20px 0;
+}
+/* create new blog form */
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  font-size: 20px;
+  color: #35a9f1;
+  margin-bottom: 30px;
+}
+.create input, .create textarea, .create select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0px;
+  border: 1px solid #ddd;
+  display: block;
+}
+.create button {
+  background: #35a9f1;
+  color: #fff;
+  border: 0px;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
