@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import { Button } from './Create.styles';
 
 const Create = () => {
   const [title, setTitle] = useState('');
@@ -49,8 +50,8 @@ const Create = () => {
          <option value="mario">mario</option>
          <option value="yoshi">yoshi</option>
       </select>
-      { !isLoading && <button>Add Blog</button> }
-      { isLoading && <button disabled>Adding new blog...</button> }
+      { !isLoading && <Button>Add Blog</Button> }
+      { isLoading && <Button disabled>Adding new blog...</Button> }
 
     </form>
  </div>

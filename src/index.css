@@ -89,11 +89,3 @@
   border: 1px solid #ddd;
   display: block;
 }
-.create button {
-  background: #35a9f1;
-  color: #fff;
-  border: 0px;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
